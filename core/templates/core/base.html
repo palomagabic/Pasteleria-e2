@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="Descripcion" content="Sitio Web Responsivo - Bootstrap Pasteleria Umami">
 
-
+    {% load static %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'core/assets/css/style.css'}">
-    <link rel="icon" type="img/png" href="{% static 'core/assets/img/icono.png'}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'core/assets/img/favicon.ico' %}"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
 
     <title>{% block title %}{% endblock %} | Pasteleria Umami</title>
-    {% load static %}
+
 </head>
-<body>
+<body class="is-preload">
 
 
     <!--Barra de Navegacion-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <img height="75" width="75" src="./assets/img/icono.png" alt="">
+        <i class="fas fa-birthday-cake"></i>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -46,6 +47,15 @@
     </nav>
     <!--Fin Barra de navecacion-->
     <!--Reloj-->
+    <section>
+      <div class="jumbotron text-center">
+        <header style="background-image: url'{% static 'core/assets/img/obertura.png' %}'}">
+          <h1>{% block header %}{% endblock %}</h1>
+        </header>
+
+      </div>
+    </section>
+
     <div class="wrap">
         <div class="widget">
             <div class="fecha">
@@ -77,13 +87,13 @@
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
-                    <img src="./assets/img/vitrina.jpg" class="img-fluid d-block w-60" alt="...">
+                    <img src="{% static 'core/assets/img/vitrina.jpg' %}" class="img-fluid d-block w-60" alt="...">
                 </div>
                 <div class="carousel-item" data-interval="2000">
-                    <img src="./assets/img/maccaroni.jpg" class="img-fluid d-block w-60" alt="...">
+                    <img src="{% static 'core/assets/img/maccaroni.jpg' %}" class="img-fluid d-block w-60" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./assets/img/galletas.jpg" class="img-fluid d-block w-60" alt="...">
+                    <img src="{% static 'core/assets/img/galletas.jpg' %}" class="img-fluid d-block w-60" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -154,52 +164,55 @@
     <br>
 
     <!--Footer-->
-    <footer>
+    <section id="footer">
+      <footer>
 
-        <div class="container-body-all">
+          <div class="container-body-all">
 
-            <div class="container-body">
-                <div class="colum1">
-                    <h2>Mas info de la compañia</h2>
-                    <p>Somos una empresa que esta 100% comprometida con la satisfaccion de nuestros clientes.....</p>
-                </div>
+              <div class="container-body">
+                  <div class="colum1">
+                      <h2>Mas info de la compañia</h2>
+                      <p>Somos una empresa que esta 100% comprometida con la satisfaccion de nuestros clientes.....</p>
+                  </div>
 
-                <div class="colum2">
-                    <h2>Redes Sociales</h2>
-                    <div class="row">
-                        <img src="assets/img/iconos/facebook.png">
-                        <label>Siguenos en Facebook</label>
-                    </div>
-                    <div class="row">
-                        <img src="assets/img/iconos/insta.png" alt="">
-                        <label>Siguenos en Instagram</label>
-                    </div>
-                    <div class="row">
-                        <img src="assets/img/iconos/twitter.png" alt="">
-                        <label>Siguenos en Twitter</label>
-                    </div>
-                </div>
+                  <div class="colum2">
+                      <h2>Redes Sociales</h2>
+                      <div class="row">
+                          <i class="fab fa-facebook-f"></i>
+                          <label>Siguenos en Facebook</label>
+                      </div>
+                      <div class="row">
+                          <i class="fab fa-instagram"></i>
+                          <label>Siguenos en Instagram</label>
+                      </div>
+                      <div class="row">
+                          <i class="fab fa-twitter"></i>
+                          <label>Siguenos en Twitter</label>
+                      </div>
+                  </div>
 
-                <div class="colm3">
-                    <h2 style="font-size:22px">Contactos</h2>
-                    <div class="row2">
-                        <img src="assets/img/iconos/casa.png" alt="">
-                        <label>Santiago de Chile, Las Condes #7015</label>
-                    </div>
-                    <div class="row2">
-                        <img src="assets/img/iconos/telefono.png" alt="">
-                        <label>+56953637958</label>
-                    </div>
-                    <div class="row2">
-                        <img src="assets/img/iconos/correo.png" alt="">
-                        <label>PasteleriaUmami@gmail.com</label>
-                    </div>
-                </div>
-            </div>
+                  <div class="colm3">
+                      <h2 style="font-size:22px">Contactos</h2>
+                      <div class="row2">
+                          <i class="fas fa-home"></i>
+                          <label>Santiago de Chile, Las Condes #7015</label>
+                      </div>
+                      <div class="row2">
+                          <i class="fas fa-phone-alt"></i>
+                          <label>+56953637958</label>
+                      </div>
+                      <div class="row2">
+                          <i class="fas fa-envelope-open-text"></i>
+                          <label>PasteleriaUmami@gmail.com</label>
+                      </div>
+                  </div>
+              </div>
 
-        </div>
+          </div>
 
-    </footer>
+      </footer>
+    </section>
+
     <!--Fin Footer-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
