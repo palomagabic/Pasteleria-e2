@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core import views
+from core import views as core_views
+from pasteleria import views as pasteleria_views
 
 urlpatterns = [
-    path('',views.index, name='index'),
-    path('acerca_de/',views.acerca_de, name='acerca_de'),
-    path('contacto/',views.contacto, name='contacto'),
-    path('picoteo/',views.picoteo, name='picoteo'),
-    path('tortas/',views.tortas, name='tortas'),
+    path('',core_views.index, name='index'),
+    path('acerca_de/',core_views.acerca_de, name='acerca_de'),
+    path('contacto/',core_views.contacto, name='contacto'),
+    path('picoteo/',core_views.picoteo, name='picoteo'),
+    path('tortas/',pasteleria_views.tortas, name='tortas'),
     path('admin/', admin.site.urls),
+    path('dimension/', core_views.dimension, name='dimension'),
 ]

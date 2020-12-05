@@ -13,5 +13,5 @@ def contacto(request):
 def picoteo(request):
     return render(request, "core/picoteo.html")
 
-def tortas(request):
-    return render(request, "core/tortas.html")
+def dimension(request):
+    return render(request, "core/dimension.html")
