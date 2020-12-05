@@ -4,9 +4,6 @@ from django.shortcuts import render
 def index(request):
     return render(request, "core/index.html")
 
-def acerca_de(request):
-    return render(request, "core/acerca_de.html")
-
 def contacto(request):
     return render(request, "core/contacto.html")
 

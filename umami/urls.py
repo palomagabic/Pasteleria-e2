@@ -18,13 +18,16 @@ from django.urls import path
 
 from core import views as core_views
 from pasteleria import views as pasteleria_views
+from django.conf import settings
 
 urlpatterns = [
-    path('',core_views.index, name='index'),
-    path('acerca_de/',core_views.acerca_de, name='acerca_de'),
+    path('',core_views.dimension, name='dimension'),
     path('contacto/',core_views.contacto, name='contacto'),
     path('picoteo/',core_views.picoteo, name='picoteo'),
     path('tortas/',pasteleria_views.tortas, name='tortas'),
     path('admin/', admin.site.urls),
-    path('dimension/', core_views.dimension, name='dimension'),
 ]
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

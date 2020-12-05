@@ -122,3 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#Media Files (configurar la ruta para almacenar imagenes u otros)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = Path(BASE_DIR,"media")

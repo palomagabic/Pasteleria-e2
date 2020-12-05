@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Tortas{% endblock %}
+{% load static %}
+
+
+{% block header %}Tortas{% endblock %}
+{% block content %}
+  {% for cake in cakes %}
+    <div class="col-md-4">
+      <div class="card m-3" style="width: 18rem;">
+        <img src="{{cake.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{cake.title}}</h5>
+          <p class="card-text">{{cake.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
