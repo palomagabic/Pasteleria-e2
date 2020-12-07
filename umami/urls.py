@@ -21,7 +21,7 @@ from pasteleria import views as pasteleria_views
 from django.conf import settings
 
 urlpatterns = [
-    path('',core_views.dimension, name='dimension'),
+    path('',core_views.index, name='index'),
     path('contacto/',core_views.contacto, name='contacto'),
     path('picoteo/',core_views.picoteo, name='picoteo'),
     path('tortas/',pasteleria_views.tortas, name='tortas'),

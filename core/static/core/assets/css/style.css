@@ -1,96 +1,40 @@
-
-section{
-  height: 500px;
-  width: 500px;
-
+.imgbd {
+  height: 15rem;
+  width: 15rem;
 }
 
-footer{
-  background: #505050;
-  color: whitesmoke;
+.page-item.active .page-link {
+  z-index: 2;
+  color: #fff;
+  background-color: transparent;
+  border-color: #343a;
 }
 
-.container-body-all{
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-.container-body{
-  display: flex;
-  justify-content: space-between;
-}
-.colum1{
-  max-width: 400px;
-}
-.colum1 h2{
-  font-size: 22px;
-
-}
-.colum1 p{
-  font-size: 14px;
-  color: whitesmoke;
-  margin-top: 20px;
+.page-item.disabled .page-link {
+  color: #fff;
+  pointer-events: none;
+  background-color: transparent;
+  border-color: #343a;
 }
 
-.colum2{
-  max-width: 400px;
-}
-.colum2 h2{
-  font-size:22px;
-}
-.row{
-  margin-top: 20px;
-  display: flex;
-}
-.colum2 img{
-  width: 35px;
-  height: 35px;
-}
-.row label{
-  margin-top: 10px;
-  margin-left: 20px;
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #343a;
 }
 
-.colum3{
-  max-width: 400px;
-  display: flex;
-}
-.colum3 h2{
-  font-size:22px;
-}
-.row2{
-margin-top: 20px;
+.page-link:focus, .page-link:hover {
+  color: #343a;
+  text-decoration: none;
+  background-color: #ddd;
+  border: #e9ecef;
 }
 
-.row2 img{
-  width: 35px;
-  height: 35px;
-}
-
-.row2 label{
-  margin-top: 10px;
-  margin-left: 20px;
-  max-width: 140px;
-}
-
-.container{
-  content: center;
-  min-width: 1200px;
-  max-width: 1140px;
-  width: 100%;
-  height: 100%;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.card-body{
-align-content: space-between ;
-}
-header{
-  justify-content: center;
-  align-items: center;
-}
 @media(max-width:640px){
   .ocultarfoto{
     display: none;

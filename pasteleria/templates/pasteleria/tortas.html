@@ -1,20 +1,58 @@
 {% extends 'core/base.html' %}
-
-{% block title %}Tortas{% endblock %}
 {% load static %}
-
-
+{% block title %}Tortas{% endblock %}
 {% block header %}Tortas{% endblock %}
 {% block content %}
-  {% for cake in cakes %}
-    <div class="col-md-4">
-      <div class="card m-3" style="width: 18rem;">
-        <img src="{{cake.image.url}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{cake.title}}</h5>
-          <p class="card-text">{{cake.descripcion}}</p>
+    <!-- Header -->
+      <header id="header">
+        <div class="logo">
+          <i class="fas fa-birthday-cake fa-3x"></i>
         </div>
-      </div>
-    </div>
-  {% endfor %}
+        <nav>
+					<ul>
+						<li><a href="{% url 'index' %}">Intro</a></li>
+						<li><a href="{% url 'tortas' %}">Tortas</a></li>
+						<li><a href="#about">Nosotros</a></li>
+						<li><a href="#contact">Contacto</a></li>
+						<!--<li><a href="#elements">Elements</a></li>-->
+					</ul>
+				</nav>
+      </header>
+      <section>
+
+          {% for cake in cakes %}
+            <div class="row p-2 m-3">
+              <img class="imgbd img-fluid" src="{{cake.image.url}}" alt="...">
+              <div class="col-mlg-7 col-md-8">
+                <h2 class="section-heading-title">{{cake.title}}</h2>
+                <p>{{cake.descripcion}}</p>
+              </div>
+            </div>
+          {% endfor %}
+
+          {% if  cakes.has_other_pages %}
+
+            <div class="row justify-content-center text-secondary mt-4 mb-4">
+              <nav>
+                <ul class="pagination">
+                  {% if cakes.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page={{ cakes.previous_page_number }}">&laquo;</a</li>
+                  {% endif %}
+
+                  {% for i in cakes.paginator.page_range %}
+                    {% if cakes.number == i %}
+                      <li class="page-item active"><span class="page-link" href="?page={{i}}">{{i}}<span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                    {% endif %}
+                  {% endfor %}
+
+                  {% if cakes.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ cakes.next_page_number }}">&raquo;</a></li>
+                  {% endif %}
+                </ul>
+              </nav>
+            </div>
+          {% endif %}
+      </section>
 {% endblock %}
