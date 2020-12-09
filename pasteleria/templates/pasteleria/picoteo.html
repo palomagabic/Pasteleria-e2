@@ -1,39 +1,40 @@
 {% extends 'core/base.html' %}
 {% load static %}
-{% block title %}<h1>Tortas</h1>{% endblock %}
-{% block header %}Tortas{% endblock %}
+{% block title %}<h1>Dulces y picoteos</h1>{% endblock %}
+{% block header %}Dulces{% endblock %}
 {% block content %}
+
       <section>
 
-          {% for cake in cakes %}
+          {% for dessert in desserts %}
             <div class="row p-2 m-3">
-              <img class="imgbd img-fluid" src="{{cake.image.url}}" alt="...">
+              <img class="imgbd img-fluid" src="{{dessert.image.url}}" alt="...">
               <div class="col-mlg-7 col-md-8">
-                <h2 class="section-heading-title">{{cake.title}}</h2>
-                <p>{{cake.descripcion}}</p>
+                <h2 class="section-heading-title">{{dessert.title}}</h2>
+                <p>{{dessert.description}}</p>
               </div>
             </div>
           {% endfor %}
 
-          {% if  cakes.has_other_pages %}
+          {% if  desserts.has_other_pages %}
 
             <div class="row justify-content-center text-secondary mt-4 mb-4">
               <nav>
                 <ul class="pagination">
-                  {% if cakes.has_previous %}
-                    <li class="page-item"><a class="page-link" href="?page={{ cakes.previous_page_number }}">&laquo;</a</li>
+                  {% if desserts.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page={{ desserts.previous_page_number }}">&laquo;</a</li>
                   {% endif %}
 
-                  {% for i in cakes.paginator.page_range %}
-                    {% if cakes.number == i %}
+                  {% for i in desserts.paginator.page_range %}
+                    {% if desserts.number == i %}
                       <li class="page-item active"><span class="page-link" href="?page={{i}}">{{i}}<span class="sr-only">(current)</span></span></li>
                     {% else %}
                       <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
                     {% endif %}
                   {% endfor %}
 
-                  {% if cakes.has_next %}
-                    <li class="page-item"><a class="page-link" href="?page={{ cakes.next_page_number }}">&raquo;</a></li>
+                  {% if desserts.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ desserts.next_page_number }}">&raquo;</a></li>
                   {% endif %}
                 </ul>
               </nav>

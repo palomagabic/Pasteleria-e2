@@ -6,6 +6,3 @@ def index(request):
 
 def contacto(request):
     return render(request, "core/contacto.html")
-
-def picoteo(request):
-    return render(request, "core/picoteo.html")

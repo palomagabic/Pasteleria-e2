@@ -1,26 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
-{% block content %}
-		<!-- Header -->
-			<header id="header">
-				<div class="logo">
-					<i class="fas fa-birthday-cake fa-3x"></i>
-				</div>
-				<div class="content">
-					<div class="inner">
-						<h1> Pasteleria Umami</h1>
-						<p>Tradicion y sabor desde 1988, fundado por familias <br> emprendedoras bla bla blabla bla bla blabla ....</p>
-					</div>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="{% url 'tortas' %}">Tortas</a></li>
-						<li><a href="#about">Nosotros</a></li>
-						<li><a href="#contact">Contacto</a></li>
-						<!--<li><a href="#elements">Elements</a></li>-->
-					</ul>
-				</nav>
-			</header>
-
+{% block title %}
+	<h1> Pasteleria Umami</h1>
+	<p>Tradicion y sabor desde 1988, fundado por familias <br> emprendedoras bla bla blabla bla bla blabla ....</p>
 {% endblock %}
+{% block content %}{% endblock %}
