@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.timezone import now
 # Create your models here.
 class Link(models.Model):
     key = models.SlugField(verbose_name="Nombre clave", max_length=100, unique=True)

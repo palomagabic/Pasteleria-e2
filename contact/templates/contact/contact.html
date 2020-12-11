@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}<h1>Contacto</h1>{% endblock %}
+
+{% block content %}
+
+<section class="p-5">
+  <form method="post" action="#">
+    {% csrf_token %}
+    {% if 'OK' in request.GET %}
+      <p class="text-primary"><strong>Su mensaje se ha enviado correctamente</strong></p>
+    {% endif %}
+    {% if 'FAIL' in request.GET %}
+      <p class="text-danger"><strong>Problemas al momento de enviar los datos, Intentelo en unos momentos</strong></p>
+    {% endif %}
+
+    <div class="fields">
+      <div class="field half">
+        <label for="name">Nombre</label>
+        {{form.name}}
+        {{form.name.errors}}
+      </div>
+      <div class="field half">
+        <label for="email">Email</label>
+        {{form.email}}
+        {{form.email.errors}}
+      </div>
+      <div class="field">
+        <label for="message">Mensage</label>
+        {{form.message}}
+        {{form.message.errors}}
+      </div>
+    </div>
+    <ul class="actions">
+      <li><input type="submit" value="Enviar" class="primary" /></li>
+    </ul>
+  </form>
+</section>
+
+{% endblock %}

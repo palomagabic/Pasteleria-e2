@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'pasteleria.apps.PasteleriaConfig',
     'receta',
     'social.apps.SocialConfig',
+    'contact',
 ]
 
 MIDDLEWARE = [
