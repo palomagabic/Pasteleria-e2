@@ -1,10 +1,6 @@
 {% load static %}
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html lang="es-cl" dir="ltr">
 	<head>
 		<title> Pasteleria Umami </title>
@@ -14,7 +10,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-		<link rel="shortcut icon" type="image/png" href="{% static 'core/images/favicon.ico' %}"/>
+		<link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
 		<link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}" />
 		<link rel="stylesheet" href="{% static 'core/assets/css/style.css' %}" />
 		<noscript><link rel="stylesheet" href="{% static 'core/assets/css/noscript.css' %}" /></noscript>
@@ -36,6 +32,7 @@
 							<li><a href="#intro">Intro</a></li>
 							<li><a href="{% url 'tortas' %}">Tortas</a></li>
 							<li><a href="{% url 'picoteo' %}">Dulces</a></li>
+							<li><a href="{% url 'receta' %}">Recetas</a></li>
 							<li><a href="#about">Nosotros</a></li>
 							<li><a href="#contact">Contacto</a></li>
 							<!--<li><a href="#elements">Elements</a></li>-->
@@ -375,39 +372,49 @@
 
           </div>
 
-        <footer id="footer">
-
-          <div class="container-body-all p-5">
-
-              <div class="container-body">
-
-                  <div class="colum2">
-                      <div class="row2">
-                        <label> Nuestras redes sociales </label>
-                          <i class="fab fa-facebook-f p-2"></i>
-                          <i class="fab fa-instagram p-2"></i>
-                          <i class="fab fa-twitter p-2"></i>
-                      </div>
-                      <h2 style="font-size:22px">Contactos</h2>
-                      <div class="row2">
-                          <i class="fas fa-home"></i>
-                          <label>Santiago de Chile, Las Condes #7015</label>
-                      </div>
-                      <div class="row2">
-                          <i class="fas fa-phone-alt"></i>
-                          <label>+56953637958</label>
-                      </div>
-                      <div class="row2">
-                          <i class="fas fa-envelope-open-text"></i>
-                          <label>PasteleriaUmami@gmail.com</label>
-                      </div>
-                  </div>
-              </div>
-
-          </div>
+        <footer id="footer text-faded text-center py-5">
+						<div class="container">
+							<h2 style="font-size:22px">Contactos</h2>
+							<p class="m-0">
+								{% if LINK_FACEBOOK %}
+									<a href="{{LINK_FACEBOOK}}" class="link" target="_blank">
+										<span class="fa-stack fa-lg">
+											<i class="fab fa-facebook-f p-2"></i>
+										</span>
+									</a>
+								{% endif %}
+								{% if LINK_INSTAGRAM %}
+									<a href="{{LINK_INSTAGRAM}}" class="link" target="_blank">
+										<span class="fa-stack fa-lg">
+											<i class="fab fa-instagram p-2"></i>
+										</span>
+									</a>
+								{% endif %}
+								{% if LINK_TWITTER %}
+									<a href="{{LINK_TWITTER}}" class="link" target="_blank">
+										<span class="fa-stack fa-lg">
+											<i class="fab fa-twitter p-2"></i>
+										</span>
+									</a>
+								{% endif %}
+							</p>
+							<span>
+									<i class="fas fa-home"></i>
+									<label>Santiago de Chile, Las Condes #7015</label>
+							</span>
+							<span>
+									<i class="fas fa-phone-alt"></i>
+									<label>+56953637958</label>
+							</span>
+							<span>
+									<i class="fas fa-envelope-open-text"></i>
+									<label>PasteleriaUmami@gmail.com</label>
+							</span>
+						</div>
         </footer>
 
-      </div>
+			</div>
+
 
     <!-- BG -->
       <div id="bg"></div>
