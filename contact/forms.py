@@ -8,4 +8,4 @@ class ContactForm(forms.Form):
 
     class Meta:
         model = Form
-        fields = ['name','email','message']
+        exclude = ('created')

@@ -130,3 +130,9 @@ STATIC_URL = '/static/'
 #Media Files (configurar la ruta para almacenar imagenes u otros)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path(BASE_DIR,"media")
+
+#Email Config
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'bfed45f8617931'
+EMAIL_HOST_PASSWORD = '3e5cee2f1d6491'
+EMAIL_PORT = '2525'
