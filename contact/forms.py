@@ -7,5 +7,10 @@ class ContactForm(forms.Form):
     message = forms.CharField(label="Mensaje", min_length=5, max_length=300, required=True, widget=forms.Textarea(attrs={'placeholder':'Dejanos tu mensaje','rows':5}))
 
     class Meta:
+        verbose_name = "correo"
+        verbose_name_plural = "correos"
         model = Form
         exclude = ('created')
+
+    def __str__(self):
+        return self.email

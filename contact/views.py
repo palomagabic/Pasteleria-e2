@@ -12,11 +12,11 @@ def contact(request):
     if request.method == "POST":
         contact_form = ContactForm(data = request.POST)
         if contact_form.is_valid():
-            name = request.POST.get('name', '')
-            email = request.POST.get('email', '')
-            message = request.POST.get('message', '')
-
-            f =contact_form.save()
+            form_data = contact_form.cleaned_data
+            name = request.POST.get("name", '')
+            email = request.POST.get("email", '')
+            message = request.POST.get("message", '')
+            correo = Form.objects.create(name=name, email=email,message=message, created=timezone.now())
 
             email = EmailMessage(
             "Umami Pasteleria: Nuevo mensaje de contacto",
